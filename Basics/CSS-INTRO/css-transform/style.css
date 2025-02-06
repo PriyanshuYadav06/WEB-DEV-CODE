@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color:aquamarine;
+    height: 800px;
+    border:2px solid black;
+    margin: 15px;
+}
+.child1{
+    border:2px solid black;
+    background-color:aqua;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(90deg); */
+    /* transform:rotateX(10deg); */
+    /* transform: scale(1.6); */
+    /* The `transform:scaleY(1.5);` property in CSS is scaling the element along the vertical axis. In
+    this case, the element with the class `child1` will be stretched vertically by a factor of 1.5,
+    making it 1.5 times taller than its original height while maintaining its width. */
+    /* transform:scaleY(1.5); */
+    /* transform: skewX(15); */
+    transform: translateX(15%);
+
+}

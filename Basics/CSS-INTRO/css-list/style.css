@@ -1,0 +1,13 @@
+*{
+   
+    box-sizing: border-box;
+}
+nav ul li{
+    list-style: none;
+    
+}
+nav{
+    display: flex;
+   
+   
+}

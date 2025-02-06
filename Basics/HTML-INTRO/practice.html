@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f2ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: white;
+            width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+        }
+        .card-header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 16px;
+        }
+        .card-header .name {
+            font-weight: bold;
+        }
+        .card-header .headline {
+            color: gray;
+        }
+        .card-body {
+            margin-top: 16px;
+        }
+        .card-body img {
+            width: 100%;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            color: gray;
+        }
+        .card-footer .likes, .card-footer .comments {
+            display: flex;
+            align-items: center;
+        }
+        .card-footer .likes img, .card-footer .comments img {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <img src="https://via.placeholder.com/50" alt="Profile Picture">
+            <div>
+                <div class="name">Arika Pandey</div>
+                <div class="headline">HIT 2024|| IT || IEEE || JAVA</div>
+            </div>
+        </div>
+        <div class="card-body">
+            <p>I am excited to announce that I have recently embarked on a new journey as an Apprentice at Birlasoft's Bangalore branch. This opportunity is a significant milestone in my career, and I am eager to learn, grow, and contribute to...</p>
+            <img src="https://via.placeholder.com/450x200" alt="Post Image">
+        </div>
+        <div class="card-footer">
+            <div class="likes">
+                <img src="https://via.placeholder.com/16" alt="Like Icon">
+                Sampriti Ghosh and 256 others
+            </div>
+            <div class="comments">
+                45 comments
+            </div>
+        </div>
+    </div>
+</body>
+</html>

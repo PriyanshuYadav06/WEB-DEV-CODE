@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family:Arial;
+    box-sizing: border-box;
+}
+h1{
+    text-transform:uppercase;
+    text-decoration:underline;
+    text-decoration-color: aqua;
+    text-decoration-style: wavy;
+    text-align: center;
+   
+
+}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:27px;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: line-through;
+    color:aquamarine;
+    text-align:center ;
+    line-height:45px;
+}

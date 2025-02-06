@@ -1,0 +1,29 @@
+html{
+    box-sizing:content-box;
+
+}
+*,*:after,*:before{
+    /* if you want to change the child boxing model as parents */
+    box-sizing: inherit;
+}
+#demo{
+    /* border:solid red 5px; */
+    width: 200px;
+    border-style: solid;
+    border-color: red;
+    border-width: 5px;
+    padding: 5px;
+}
+#demo2{
+   /* border:solid red 5px; */
+  box-sizing:border-box;
+   width: 200px;
+   border-style: solid; 
+   border-color: red;
+   border-width: 5px;
+   padding: 5px;
+   margin-top: 5px;
+}
+#demo3{
+  border: 5px blue solid;
+}

@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border:2px solid black;
+    margin:10px;
+    height: 82vh;
+    background-color:gray;
+    display: flex;
+    /* flex-direction:row;
+    justify-content: center; 
+    align-items: center; */
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    /* gap:10px;
+    row-gap: 50px;
+    column-gap: 40px; */
+   
+    
+
+}
+.child{
+    border: 1px solid black;
+    height: 32px;
+    width: 32px;
+    margin:5px;
+    background-color: blue;
+
+}
+.child1{
+    flex-grow: 1;
+}

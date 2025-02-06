@@ -1,0 +1,38 @@
+*{
+    box-sizing: content-box;
+}
+*,*:after,*:before{
+    box-sizing: inherit;
+}
+#parent{
+    height: 500px;
+    border-style: solid;
+    border-color: blue;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:start;    /*  its help to move content along main axis */
+
+
+    /* to arrange content along cross axis */
+    align-items:normal;
+   
+}
+
+#parent div{
+    /* flex item */
+   border-style: solid;
+   border-color: blue;
+   border-width: 2px;
+   background-color: beige;
+   padding: 5px;
+   min-width: 100px;
+   max-height: 100px;
+}
+#child1{
+    flex-basis: 100%;
+   
+}
+#child2{
+    flex-grow: 1;
+}

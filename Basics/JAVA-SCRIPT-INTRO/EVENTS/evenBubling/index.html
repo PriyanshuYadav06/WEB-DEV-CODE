@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event_Bubling</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color:green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            
+        }
+        .childcontainer{
+            width:150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color:brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .child{
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            background-color:black;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childcontainer">
+            <div class="child"></div>
+        </div>
+    </div>
+    <script>
+            function randomNumber(){
+        let val1=Math.floor(0+Math.random()*255);
+        let val2=Math.floor(0+Math.random()*255);
+        let val3=Math.floor(0+Math.random()*255);
+        return `rgb(${val1},${val2},${val3})`;
+    }
+            document.querySelector(".child").addEventListener("click",(e)=>{
+               
+            alert("Yes IM child!!");
+            e.stopPropagation();
+            
+    });
+    document.querySelector(".childcontainer").addEventListener("click",(e)=>{
+            alert("Yes IM childcontainer!!");
+            e.stopPropagation();
+    });
+    document.querySelector(".container").addEventListener("click",(e)=>{
+            alert("Yes IM container!!");
+    });
+    let a= setInterval(()=>{
+        document.querySelector(".child").style.background=randomNumber();
+    },30);
+    // console.log(a);
+    // clearInterval(1);
+
+    // let a=setTimeout(()=>{
+    //     document.querySelector(".child").style.background=randomNumber();
+    // },1000);
+    // clearTimeout(1);
+    // </script>
+</body>
+</html>

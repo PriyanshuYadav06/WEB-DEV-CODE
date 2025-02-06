@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border:2px solid black;
+    margin:10px;
+    background-color:gray;
+    display: grid;
+   grid-template-areas: "nav nav  nav"
+                         "side article article"
+                         "footer footer footer";
+
+}
+.child{
+    border: 1px solid black;
+    height: 32px;
+  
+   
+   
+
+}
+.child1{
+    grid-area: nav;
+    background-color: aqua;
+}
+.child2{
+    grid-area: side;
+    background-color: aliceblue;
+}
+.child3{
+    grid-area: article;
+    background-color: beige;
+}
+.child4{
+    grid-area: footer;
+    background-color: azure;
+   
+}
+.child5{
+    grid-area: nav;
+}
+
+/* we can also use gap,justify,align items as it is like flex box */
