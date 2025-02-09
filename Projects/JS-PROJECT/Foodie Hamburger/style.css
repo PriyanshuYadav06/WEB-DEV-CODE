@@ -10,8 +10,10 @@ body{
     font-family: "poppins";
 }
 header{
-    background-color:white;
+    background-color:rgba(255, 255, 255, 0.326);
     padding: 24px;
+    position:sticky;
+    top:0;
 }
 .header-content{
     display: flex;
