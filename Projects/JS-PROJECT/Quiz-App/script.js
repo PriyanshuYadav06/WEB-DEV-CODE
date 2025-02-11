@@ -12,8 +12,23 @@ const Options=document.querySelectorAll(".option");
 const Options1=document.querySelectorAll(".option1");
 const FinalPage=document.querySelector(".section2");
 const time=document.querySelector(".timer");
+const finalScore=document.querySelector(".FinalScore");
+const updateProgress=document.querySelector(".p");
+const motivate=document.querySelector(".motivation");
+const h=document.querySelector(".high");
+const hi=document.querySelector(".highh");
+let high_score=0;
 let count=1;
 let flag=false;
+let flagw=true;
+let wrongAnswer=0;
+high_score=localStorage.getItem("high_score");
+if(high_score==0){
+    h.style.display="none";
+}else{
+    h.style.display="block";
+    h.innerHTML=`Highest Score:${high_score}`;
+}
 StartButton.addEventListener("click",()=>{
     LandingPage.style.display="none";
     Section.style.display="block";
@@ -30,6 +45,7 @@ function correctCheck(op1){
 function incorrectCheck(parent){
     parent.classList.add("wrong");
     flag=false;
+    flagw=false;
 }
 function checkOption(parent,selectedOption){
     switch(count){
@@ -131,10 +147,44 @@ function checkOption(parent,selectedOption){
         })
     });
 })();
+function updatePro(){
+    if(wrongAnswer==1){
+        updateProgress.style.width="90%";
+    }else if(wrongAnswer==2){
+        updateProgress.style.width="80%";
+    }else if(wrongAnswer==3){
+        updateProgress.style.width="70%";
+    }else if(wrongAnswer==4){
+        updateProgress.style.width="60%";
+    }else if(wrongAnswer==5){
+        updateProgress.style.width="50%";
+    }else if(wrongAnswer==6){
+        updateProgress.style.width="40%";
+    }else if(wrongAnswer==7){
+        updateProgress.style.width="30%";
+    }else if(wrongAnswer==8){
+        updateProgress.style.width="20%";
+    }else if(wrongAnswer==9){
+        updateProgress.style.width="10%";
+    }else if(wrongAnswer==10){
+        updateProgress.style.width="0%";
+    }else{
+        motivate.innerHTML="Outstanding! A perfect 10/10! Keep up the great work!";
+    }
+}
 function LoadFinalPage(){
+    clearInterval(window.quizTimer); 
     LandingPage.style.display="none";
     Section.style.display="none";
     FinalPage.style.display="block";
+    finalScore.innerHTML=`${10-wrongAnswer}/10`;
+    if((10-wrongAnswer)>high_score){
+        high_score=10-wrongAnswer;
+        localStorage.setItem("high_score",high_score);
+        hi.innerHTML=`Congratulations! You just set a new high score:${high_score} 🎉`;
+        hi.style.display="block";
+    }
+    updatePro();
 }
 function LoadNextQues(count){
     switch(count){
@@ -219,6 +269,8 @@ function RestartTimer(){
         time.innerHTML=`00:${t--}`;
         if (t < 0) {
             clearInterval(window.quizTimer);
+            wrongAnswer++;
+            // LoadFinalPage(); we have to implement this feature
         }
         if(t<=30 && t>=14){
             document.body.style.background = "#CCE2C2";
@@ -245,12 +297,28 @@ Next.addEventListener("click",()=>{
             flag=false;
         })
         count++;
+        if(flagw==false){
+            flagw=true;
+            wrongAnswer++;
+        }
         LoadNextQues(count);
         if(count==11) LoadFinalPage();
+       
     }else{
         alert("Choose Correct Option!");
     }
 })
+
+
+
+
+
+
+
+
+
+
+
 document.querySelector(".rb").addEventListener("click", () => {
     location.reload(); 
     RestartTimer();
