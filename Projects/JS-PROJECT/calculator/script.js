@@ -15,8 +15,10 @@ function cal(exp) {
             num1=parseFloat(num1);
             num2=parseFloat(num2);
             if (exp[i] === "/" && num2 === 0) {
-                console.log("Error: Division by zero");
-                return;
+               alert("Error: Division by zero");
+               exp="";
+               Update(exp);
+               return;
             }
             if(exp[i] === "x"){
                 let res=num1*num2;
